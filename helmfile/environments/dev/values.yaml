@@ -1,2 +1,2 @@
 postgres:
-  database: "dev_app_db"
+  database: dev_app_db
