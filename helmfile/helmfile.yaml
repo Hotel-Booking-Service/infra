@@ -11,17 +11,4 @@ releases:
     chart: oci://registry-1.docker.io/bitnamicharts/postgresql
     version: 16.7.8
     values:
-      - auth:
-          postgresPassword: "{{ requiredEnv "POSTGRES_PASSWORD" }}"
-      - postgres:
-          database: "{{ .Environment.Values.postgres.database }}"
-      - persistence:
-          enabled: true
-          size: 10Gi
-      - resources:
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
+      - values/postgres-values.yaml
