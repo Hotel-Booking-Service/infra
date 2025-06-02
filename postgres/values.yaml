@@ -1,7 +1,7 @@
 image:
   registry: docker.io
   repository: postgres
-  tag: "15-alpine"
+  tag: "17.5"
   pullPolicy: IfNotPresent
 
 auth:
