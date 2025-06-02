@@ -31,10 +31,6 @@ jobs:
           chmod +x helmfile-bin/helmfile
           sudo mv helmfile-bin/helmfile /usr/local/bin/
 
-      - name: Validate Helm Charts
-        run: |
-          helm lint ./postgres
-
       - name: Helmfile Lint
         run: |
           cd helmfile
