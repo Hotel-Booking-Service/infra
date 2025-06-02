@@ -50,9 +50,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Helmfile
+        run: |
+          wget -O helmfile.tar.gz https://github.com/helmfile/helmfile/releases/download/v0.157.0/helmfile_0.157.0_linux_amd64.tar.gz
+          mkdir helmfile-bin
+          tar -xzf helmfile.tar.gz -C helmfile-bin
+          chmod +x helmfile-bin/helmfile
+          sudo mv helmfile-bin/helmfile /usr/local/bin/
+
       - name: Setup Tools
         run: |
-          # Проверка версий уже установленных инструментов
           helm version
           helmfile version
           kubectl version --client
