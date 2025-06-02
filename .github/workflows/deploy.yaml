@@ -64,6 +64,10 @@ jobs:
           helmfile version
           kubectl version --client
 
+      - name: Setup Helm Diff Plugin
+        run: |
+          helm plugin install https://github.com/databus23/helm-diff || echo "Plugin already installed"
+
       - name: Setup Kubeconfig
         run: |
           mkdir -p ~/.kube
