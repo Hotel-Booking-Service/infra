@@ -1,0 +1,32 @@
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+
+environments:
+  dev:
+    values:
+      - environments/dev/values.yaml
+
+releases:
+  - name: postgres
+    namespace: dev
+    createNamespace: true
+    chart: ./postgres
+    values:
+      - image:
+          registry: postgres
+          repository: postgres
+          tag: "15-alpine"
+      - auth:
+          postgresPassword: "{{ requiredEnv "POSTGRES_PASSWORD" }}"
+          database: "{{ .Values.postgres.database }}"
+      - persistence:
+          enabled: true
+          size: 10Gi
+      - resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
