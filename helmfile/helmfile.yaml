@@ -20,7 +20,8 @@ releases:
           tag: "15-alpine"
       - auth:
           postgresPassword: "{{ requiredEnv "POSTGRES_PASSWORD" }}"
-          database: "{{ .Values.postgres.database }}"
+      - postgres:
+          database: "{{ .Environment.Values.postgres.database }}"
       - persistence:
           enabled: true
           size: 10Gi
