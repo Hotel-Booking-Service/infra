@@ -1,5 +1,5 @@
 auth:
-  postgresPassword: "{{ requiredEnv "POSTGRES_PASSWORD" }}"
+  postgresPassword: "{{ requiredEnv \"POSTGRES_PASSWORD\" }}"
 
 postgres:
   database: "{{ .Environment.Values.postgres.database }}"
