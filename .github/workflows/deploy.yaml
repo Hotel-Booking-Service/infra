@@ -38,7 +38,9 @@ jobs:
       - name: Helmfile Lint
         run: |
           cd helmfile
-          helmfile lint
+          helmfile -e dev lint
+        env:
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
 
   deploy-dev:
     runs-on: ubuntu-latest
