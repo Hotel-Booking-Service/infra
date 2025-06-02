@@ -12,7 +12,7 @@ releases:
   - name: postgres
     namespace: dev
     createNamespace: true
-    chart: ./postgres
+    chart: ../postgres
     values:
       - image:
           registry: postgres
