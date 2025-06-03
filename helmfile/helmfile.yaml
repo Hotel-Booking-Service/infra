@@ -13,3 +13,11 @@ releases:
     values:
       - values/postgres-values.yaml
       - environments/dev/values.yaml
+
+  - name: vault
+    namespace: dev
+    chart: hashicorp/vault
+    version: 0.27.0
+    values:
+      - values/vault-values.yaml
+      - environments/dev/values.yaml
