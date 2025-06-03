@@ -24,7 +24,7 @@ server:
 
   service:
     type: NodePort
-    nodePort: 30080  # UI доступен на этом порту
+    nodePort: 30080
 
   ingress:
     enabled: true
