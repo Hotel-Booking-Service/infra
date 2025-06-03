@@ -17,7 +17,7 @@ ingress:
   hosts:
     - host: pgadmin.java-mp.space
       paths:
-        - path: /
+        - /
   tls:
     - secretName: pgadmin-tls
       hosts:
