@@ -1,6 +1,5 @@
 auth:
   existingSecret: postgres-postgresql
-  username: appuser
   database: app_db
 
 primary:
