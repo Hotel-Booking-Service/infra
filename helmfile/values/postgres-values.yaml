@@ -1,5 +1,5 @@
 auth:
-  postgresPassword: yourStrongPassword123
+  existingSecret: postgres-postgresql
   username: appuser
   database: app_db
 
