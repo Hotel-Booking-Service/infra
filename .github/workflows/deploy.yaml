@@ -76,6 +76,9 @@ jobs:
           echo "${{ secrets.KUBECONFIG }}" | base64 -d > ~/.kube/config
           chmod 600 ~/.kube/config
 
+      - name: Apply ClusterIssuer
+        run: kubectl apply -f cert-manager/clusterissuer.yaml
+
       - name: Deploy to Dev
         run: |
           cd helmfile
