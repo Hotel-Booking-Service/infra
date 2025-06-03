@@ -36,7 +36,7 @@ server:
     hosts:
       - host: vault.java-mp.space
         paths:
-          - /
+          - path: /
     tls:
       - secretName: vault-tls
         hosts:
