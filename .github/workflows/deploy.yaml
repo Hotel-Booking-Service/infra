@@ -82,6 +82,9 @@ jobs:
       - name: Apply ClusterIssuer
         run: kubectl apply -f cert-manager/clusterissuer.yaml
 
+      - name: Apply templates
+        run: kubectl apply -f templates/
+
       - name: Deploy to Dev
         run: |
           cd helmfile
