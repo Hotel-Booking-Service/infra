@@ -1,3 +1,7 @@
+repositories:
+  - name: hashicorp
+    url: https://helm.releases.hashicorp.com
+
 environments:
   dev:
     values:
