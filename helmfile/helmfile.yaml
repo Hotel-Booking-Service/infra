@@ -17,7 +17,7 @@ releases:
     chart: jetstack/cert-manager
     version: v1.14.3
     values:
-      - cert-manager/values.yaml
+      - values/cert-manager-values.yaml
 
   - name: postgres
     namespace: dev
