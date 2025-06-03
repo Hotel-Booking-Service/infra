@@ -89,5 +89,3 @@ jobs:
         run: |
           cd helmfile
           helmfile -e dev apply
-        env:
-          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
