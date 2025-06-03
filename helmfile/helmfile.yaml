@@ -1,6 +1,8 @@
 repositories:
   - name: hashicorp
     url: https://helm.releases.hashicorp.com
+  - name: jetstack
+    url: https://charts.jetstack.io
 
 environments:
   dev:
@@ -9,6 +11,14 @@ environments:
 
 ---
 releases:
+  - name: cert-manager
+    namespace: cert-manager
+    createNamespace: true
+    chart: jetstack/cert-manager
+    version: v1.14.3
+    values:
+      - cert-manager/values.yaml
+
   - name: postgres
     namespace: dev
     createNamespace: true
@@ -25,3 +35,6 @@ releases:
     values:
       - values/vault-values.yaml
       - environments/dev/values.yaml
+
+resources:
+  - cert-manager/clusterissuer.yaml
